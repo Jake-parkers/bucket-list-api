@@ -17,7 +17,7 @@ class Database {
         if (process.env.NODE_ENV === 'development') {
             this.driver = neo4j.driver(
                 'bolt://localhost:7687',
-                neo4j.auth.basic('neo4j', 'test')
+                neo4j.auth.basic('neo4j', 'bucket')
             );
         } else {
             this.driver = neo4j.driver(
