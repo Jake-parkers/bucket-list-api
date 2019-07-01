@@ -48,17 +48,24 @@ class AuthService {
     }
 
     register(payload) {
+        const User = new AuthModel(payload.email, payload.password);
         return new Promise((resolve, reject) => {{
-            Misc.hashPassword(payload.password).then(hash => {
-                const User = new AuthModel(payload.email, hash);
-                User.save().then(result => {
-                    resolve(result); // true or false
-                }).catch(error => {
-                    reject(error);
+            User.userExists()
+                .then(user => {
+                    if (user != null) resolve(false);
+                    else {
+                        Misc.hashPassword(payload.password).then(hash => {
+                            const User = new AuthModel(payload.email, hash);
+                            User.save().then(result => {
+                                resolve(result); // true or false
+                            }).catch(error => {
+                                reject(error);
+                            })
+                        }).catch(error => {
+                            reject(error);
+                        })
+                    }
                 })
-            }).catch(error => {
-                reject(error);
-            })
         }});
     }
 }

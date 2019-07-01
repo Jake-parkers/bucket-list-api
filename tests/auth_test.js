@@ -59,6 +59,18 @@ describe('Auth Service', function() {
                     done();
                 });
         });
+
+        it ('When request object is valid, account should be created', (done) => {
+            server.post('/register')
+                .send({email: 'john.doe@gmail.com', password: 'john11*9'})
+                .set('Accept', 'application/json')
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end((err) => {
+                    if (err) return done(err);
+                    done();
+                });
+        });
     });
 
     describe('User Login', function () {
@@ -109,23 +121,17 @@ describe('Auth Service', function() {
                     done();
                 });
         });
-    });
 
-    describe('Fetch All Expenses', function () {
-        it ('All bucketlist created so far should be returned', () => {
-            server.get('/fetch/all')
+        it ('When request object is valid, access token should be returned', (done) => {
+            server.post('/login')
+                .send({email: 'john.doe@gmail.com', password: 'john11*9'})
                 .set('Accept', 'application/json')
                 .expect('Content-Type', /json/)
-                .then((res) => {
-                    expect(res.status).to.equal(200);
-                    expect(res.body.status).to.be.equal('success');
-                    expect(res.body.type).to.be.equal(Errors.none);
-                    expect(res.body.message).to.be.an('array')
-                })
-                .catch(error => {
-                    console.error(error);
-                })
-        })
-    })
-
+                .expect(200)
+                .end((err) => {
+                    if (err) return done(err);
+                    done();
+                });
+        });
+    });
 });
