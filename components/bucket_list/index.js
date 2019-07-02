@@ -3,7 +3,7 @@ const BucketListController = require('./controller');
 const controller = new BucketListController();
 
 router.get('/', (req, res) => {
-    res.status(200).send("Bucket List Project");
+    res.status(200).send("Bucket Lists");
 });
 
 module.exports = router;
