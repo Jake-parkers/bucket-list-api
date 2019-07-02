@@ -29,6 +29,7 @@ class AuthService {
                             payload.iss = process.env.API_ISSUER;
                             payload.exp = Math.floor(Date.now() / 1000) + (60 * 43800); // expires in a month
                             payload.iat = Math.floor(Date.now() / 1000);
+                            payload.user_id = user.user_id;
                             Jwt.issueToken(payload)
                                 .then(jwt => {
                                     resolve(jwt);
@@ -52,12 +53,13 @@ class AuthService {
         return new Promise((resolve, reject) => {{
             User.userExists()
                 .then(user => {
-                    if (user != null) resolve(false);
-                    else {
+                    if (user !== null) {
+                        resolve(false);
+                    } else {
                         Misc.hashPassword(payload.password).then(hash => {
                             const User = new AuthModel(payload.email, hash);
                             User.save().then(result => {
-                                resolve(result); // true or false
+                                resolve(result); // user_id or false
                             }).catch(error => {
                                 reject(error);
                             })
@@ -65,6 +67,8 @@ class AuthService {
                             reject(error);
                         })
                     }
+                }).catch(error => {
+                    reject(error);
                 })
         }});
     }
