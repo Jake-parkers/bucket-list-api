@@ -4,7 +4,7 @@ const controller = new AuthController();
 const Response = require('../../libraries/response');
 const Errors = require('../../libraries/errors');
 const Misc = require('../../libraries/misc');
-
+const requireTokenAuth = require('../auth_middleware');
 
 router.get('/', (req, res) => {
     res.status(200).send("Auth route");
@@ -28,7 +28,7 @@ router.post('/register', (req, res) => {
         })
 });
 
-router.get('/logout', (req, res) => {
+router.get('/logout', requireTokenAuth, (req, res) => {
     res.status(200).send(Misc.formattedResponse(new Response('success', Errors.none, { token: null }, 200)));
 });
 
