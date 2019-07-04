@@ -25,17 +25,25 @@ class BucketListService {
     }
 
     fetchUserBuckets(payload) {
-        console.log(payload);
         return new Promise((resolve, reject) => {
             const Bucket = new BucketListModel('', payload.user_id);
-            Promise.all([
-                Bucket.fetchAll(payload.limit, payload.page),
-                BucketListModel.fetchAll(payload.user_id)
-            ]).then(values => {
-                resolve({total: values[1], buckets: values[0]});
-            }).catch(error => {
-                reject(error);
-            })
+            if (payload.q !== undefined) { // fetch bucket by it's name
+                BucketListService.findBucket(payload)
+                    .then(result => {
+                        resolve(result)
+                    }).catch(error => {
+                    reject(error);
+                })
+            } else { // perform pagination query
+                Promise.all([
+                    Bucket.fetchAll(payload.limit, payload.page),
+                    BucketListModel.fetchAll(payload.user_id)
+                ]).then(values => {
+                    resolve({total: values[1], buckets: values[0]});
+                }).catch(error => {
+                    reject(error);
+                })
+            }
         })
     }
 
@@ -68,6 +76,18 @@ class BucketListService {
         return new Promise((resolve, reject) => {
             const Bucket = new BucketListModel('', payload.user_id, payload.id);
             Bucket.delete()
+                .then(result => {
+                    resolve(result)
+                }).catch(error => {
+                reject(error);
+            });
+        })
+    }
+
+    static findBucket(payload) {
+        return new Promise((resolve, reject) => {
+            const Bucket = new BucketListModel(payload.q, payload.user_id);
+            Bucket.search()
                 .then(result => {
                     resolve(result)
                 }).catch(error => {
