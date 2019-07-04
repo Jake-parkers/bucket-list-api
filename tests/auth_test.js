@@ -10,7 +10,7 @@ const Auth = require('../components/auth/model');
 const AuthService = require('../components/auth/service');
 const auth = new AuthService();
 
-describe('Auth Service', function() {
+describe('Auth API', function() {
     describe('User Signup', function () {
         it ('When email is empty, account should not be created', (done) => {
             server.post('/register')
@@ -62,7 +62,7 @@ describe('Auth Service', function() {
 
         it ('When request object is valid, account should be created', (done) => {
             server.post('/register')
-                .send({email: 'john.doe@gmail.com', password: 'john11*9'})
+                .send({email: 'jakeparks@gmail.com', password: 'john119'})
                 .set('Accept', 'application/json')
                 .expect('Content-Type', /json/)
                 .expect(200)

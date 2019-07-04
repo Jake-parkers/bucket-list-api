@@ -18,13 +18,15 @@ const requireAuthentication = (req, res, next) => {
         algorithms: ["HS256"],
         audience: process.env.API_AUDIENCE,
         issuer: process.env.API_ISSUER
-    }, (err, _) => {
+    }, (err, decoded) => {
         if (err) {
             console.log(err);
             if (err.name === 'TokenExpiredError') {
                 return res.status(400).send(new Response('error', err.name, err.message))
             } else return res.status(400).send(new Response('error', Errors.invalid_token, "Access token supplied is not valid"))
         }
+        // attach user id to body of authenticated requests;
+        req.body.user_id = decoded.user_id;
         next();
     })
 };
