@@ -34,10 +34,11 @@ class BucketListController {
                 if (payload.limit > MAX_LIMIT) payload.limit = MAX_LIMIT;
                 if (payload.page !== undefined && payload.page > 1) payload.limit *= payload.page - 1;
                 else payload.page = 1;
+
                 service.fetchUserBuckets(payload)
                     .then(result => {
                         if (result === false) resolve(new Response('error', Errors.no_buckets, 'User has no saved bucket(s) yet', 400));
-                        else resolve(new Response('success', Errors.none, Transformer.transformBucketListPaginationResponse(result.buckets, payload.limit, payload.page, result.total) , 200));
+                        else resolve(new Response('success', Errors.none, result.buckets === undefined ? result[0] : Transformer.transformBucketListPaginationResponse(result.buckets, payload.limit, payload.page, result.total) , 200));
                     }).catch(error => {
                         reject(new Response('error', Errors.server_error, error.message, 500));
                     });
@@ -57,6 +58,22 @@ class BucketListController {
                     }).catch(error => {
                         reject(new Response('error', Errors.server_error, error.message, 500));
                     });
+            }
+        });
+    }
+
+    findBucket(payload) {
+        return new Promise((resolve, reject) => {
+            const error = Validator.validateFindBucketPayload(payload);
+            if (error !== null) resolve(new Response('error', Errors.invalid_params, error, 400));
+            else {
+                service.fetchSingleBucket(payload)
+                    .then(bucket => {
+                        if (bucket === false) resolve(new Response('error', Errors.no_buckets, 'Bucket doesn\'t exist', 400));
+                        else resolve(new Response('success', Errors.none, bucket , 200));
+                    }).catch(error => {
+                    reject(new Response('error', Errors.server_error, error.message, 500));
+                });
             }
         });
     }
