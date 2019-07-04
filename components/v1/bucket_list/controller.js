@@ -1,9 +1,9 @@
 const BucketListService = require('./service');
 const service = new BucketListService();
-const Response = require('../../libraries/response');
+const Response = require('../../../libraries/response');
 const Validator = require('./validator');
 const ItemValidator = require('../items/validator');
-const Errors = require('../../libraries/errors');
+const Errors = require('../../../libraries/errors');
 const Transformer = require('./transformer');
 const DEFAULT_LIMIT = 20;
 const MAX_LIMIT = 100;

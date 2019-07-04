@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const BucketListController = require('./controller');
 const controller = new BucketListController();
-const Misc = require('../../libraries/misc');
-const Response = require('../../libraries/response');
-const Errors = require('../../libraries/errors');
+const Misc = require('../../../libraries/misc');
+const Response = require('../../../libraries/response');
+const Errors = require('../../../libraries/errors');
 const requireTokenAuth = require('../auth_middleware');
 
 /**

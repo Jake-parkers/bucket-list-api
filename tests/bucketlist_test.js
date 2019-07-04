@@ -6,10 +6,10 @@ const expect = require('chai').expect;
 const server = supertest.agent('localhost:3000/bucketlists');
 
 const Errors = require('../libraries/errors');
-const BucketList = require('../components/bucket_list/model');
-const BucketListService = require('../components/bucket_list/service');
+const BucketList = require('../components/v1/bucket_list/model');
+const BucketListService = require('../components/v1/bucket_list/service');
 const bucketListService = new BucketListService();
-const AuthService = require('../components/auth/service');
+const AuthService = require('../components/v1/auth/service');
 const auth = new AuthService();
 
 describe('Bucket List API', function () {

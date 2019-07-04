@@ -1,4 +1,4 @@
-const Database = require('../../libraries/database');
+const Database = require('../../../libraries/database');
 const db = new Database();
 const dbDriver = db.connect();
 const uuid = require('uuid/v4');
