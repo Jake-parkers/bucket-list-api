@@ -1,10 +1,9 @@
 const app = require('express')();
 const cors = require('cors');
 const morgan = require('morgan');
-const Sentry = require('@sentry/node');
+const Sentry = require('@sentry/node/dist/index');
 const bodyParser = require('body-parser');
-const bucketlist = require('./bucket_list');
-const auth = require('./auth');
+const apiV1 = require('./v1');
 
 Sentry.init({ dsn: process.env.SENTRY_TOKEN });
 
@@ -26,8 +25,7 @@ app.get('/', (req, res) => {
 });
 
 // routes
-app.use('/bucketlists', bucketlist);
-app.use('/auth', auth);
+app.use('/api/v1', apiV1);
 
 // The sentry error handler must be before any other error middleware
 app.use(Sentry.Handlers.errorHandler());

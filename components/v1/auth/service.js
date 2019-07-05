@@ -1,9 +1,9 @@
 const AuthModel = require('./model');
-const Misc = require('../../libraries/misc');
-const Response = require('../../libraries/response');
+const Misc = require('../../../libraries/misc');
+const Response = require('../../../libraries/response');
 const Validator = require('./validator');
-const Errors = require('../../libraries/errors');
-const Jwt = require('../../libraries/jwt');
+const Errors = require('../../../libraries/errors');
+const Jwt = require('../../../libraries/jwt');
 
 const JwtPayload = {
     iss: "",

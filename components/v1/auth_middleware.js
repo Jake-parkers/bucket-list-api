@@ -1,6 +1,6 @@
 const jsonwebtoken = require('jsonwebtoken');
-const Response = require('../libraries/response');
-const Errors = require('../libraries/errors');
+const Response = require('../../libraries/response');
+const Errors = require('../../libraries/errors');
 /**
  * This function checks if the authorization header is present for routes that are protected and hence require that it be available.
  * If the authorization header is not set in the format 'Bearer jwt-token', an Unauthorized error will be thrown and the client will not be able to access the route

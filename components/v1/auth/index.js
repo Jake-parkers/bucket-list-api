@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const AuthController = require('./controller');
 const controller = new AuthController();
-const Response = require('../../libraries/response');
-const Errors = require('../../libraries/errors');
-const Misc = require('../../libraries/misc');
+const Response = require('../../../libraries/response');
+const Errors = require('../../../libraries/errors');
+const Misc = require('../../../libraries/misc');
 const requireTokenAuth = require('../auth_middleware');
 
 router.get('/', (req, res) => {

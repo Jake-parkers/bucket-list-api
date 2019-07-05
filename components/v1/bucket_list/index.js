@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const BucketListController = require('./controller');
 const controller = new BucketListController();
-const Misc = require('../../libraries/misc');
-const Response = require('../../libraries/response');
-const Errors = require('../../libraries/errors');
+const Misc = require('../../../libraries/misc');
+const Response = require('../../../libraries/response');
+const Errors = require('../../../libraries/errors');
 const requireTokenAuth = require('../auth_middleware');
 
 /**
@@ -27,6 +27,7 @@ function appendParamToRequestBody(req, res, next) {
 
 function appendQueryParamsToRequestBody(req, res, next) {
     const queryParams = Object.keys(req.query);
+    console.log(queryParams);
     if (queryParams.length === 0) next();
     else if (queryParams.length === 1) {
         req.body[queryParams[0]] = req.query[queryParams];
@@ -53,8 +54,8 @@ router.post('/', requireTokenAuth, (req, res) => {
 /**
  * Route for fetching all bucket lists for a user
  */
-router.get('/', requireTokenAuth, appendQueryParamsToRequestBody, (req, res) => {
-    controller.fetchUserBuckets(req.body)
+router.get('/', requireTokenAuth, (req, res) => {
+    controller.fetchUserBuckets(req.body, req.query)
         .then(response => {
             res.status(response.status_code).send(Misc.formattedResponse(response));
         }).catch(error => {
@@ -98,6 +99,9 @@ router.delete('/:id', requireTokenAuth, appendParamToRequestBody, (req, res) => 
     });
 });
 
+/**
+ * Route for creating a new item in a bucket List
+ */
 router.post('/:id/items', requireTokenAuth, appendParamToRequestBody, (req, res) => {
     controller.createItem(req.body)
         .then(response => {

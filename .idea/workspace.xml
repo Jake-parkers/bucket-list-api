@@ -14,91 +14,91 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../bucketlist/components/bucket_list/index.js">
+        <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="61" column="7" lean-forward="true" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+            <state relative-caret-position="220">
+              <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../bucketlist/components/auth/service.js">
+        <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="861">
-              <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+            <state relative-caret-position="263">
+              <caret line="87" column="37" lean-forward="true" selection-start-line="87" selection-start-column="37" selection-end-line="87" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../bucketlist/index.js">
+        <entry file="file://$PROJECT_DIR$/../bucketlist/libraries/errors.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+            <state relative-caret-position="147">
+              <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../bucketlist/components/bucket_list/controller.js">
+        <entry file="file://$PROJECT_DIR$/../bucketlist/components/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2671">
-              <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+            <state relative-caret-position="183">
+              <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../bucketlist/components/bucket_list/transformer.js">
+        <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+            <state relative-caret-position="105">
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../bucketlist/.gitignore">
+        <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/transformer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+            <state relative-caret-position="714">
+              <caret line="33" column="82" selection-start-line="33" selection-start-column="82" selection-end-line="33" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../bucketlist/components/bucket_list/service.js">
+        <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+            <state relative-caret-position="1008">
+              <caret line="107" column="47" lean-forward="true" selection-start-line="107" selection-start-column="47" selection-end-line="107" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../bucketlist/components/bucket_list/validator.js">
+        <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/items/model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
+            <state relative-caret-position="207">
+              <caret line="64" column="6" lean-forward="true" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/validator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="961">
               <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../bucketlist/components/bucket_list/model.js">
+        <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="207" column="120" selection-start-line="207" selection-start-column="120" selection-end-line="207" selection-end-column="120" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../bucketlist/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+            <state relative-caret-position="294">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -117,6 +117,8 @@
       <find>{</find>
       <find>console.log</find>
       <find>bucket</find>
+      <find>exists</find>
+      <find>bucketExists</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -128,13 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/components/app.js" />
-        <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/libraries/response.js" />
-        <option value="$PROJECT_DIR$/libraries/database.js" />
-        <option value="$PROJECT_DIR$/components/expense/service.js" />
-        <option value="$PROJECT_DIR$/components/expense/controller.js" />
         <option value="$PROJECT_DIR$/components/expense/index.js" />
         <option value="$PROJECT_DIR$/components/expense/validator.js" />
         <option value="$PROJECT_DIR$/tests/expense_test.js" />
@@ -150,7 +145,6 @@
         <option value="$PROJECT_DIR$/libraries/jwt.js" />
         <option value="$PROJECT_DIR$/libraries/errors.js" />
         <option value="$PROJECT_DIR$/components/auth_middleware.js" />
-        <option value="$PROJECT_DIR$/../bucketlist/components/index.js" />
         <option value="$PROJECT_DIR$/../bucketlist/libraries/hash.js" />
         <option value="$PROJECT_DIR$/../bucketlist/libraries/response.js" />
         <option value="$PROJECT_DIR$/../bucketlist/libraries/database.js" />
@@ -172,12 +166,21 @@
         <option value="$PROJECT_DIR$/../bucketlist/libraries/errors.js" />
         <option value="$PROJECT_DIR$/../bucketlist/.env" />
         <option value="$PROJECT_DIR$/../bucketlist/components/bucket_list/index.js" />
-        <option value="$PROJECT_DIR$/../bucketlist/index.js" />
         <option value="$PROJECT_DIR$/../bucketlist/components/bucket_list/validator.js" />
         <option value="$PROJECT_DIR$/../bucketlist/components/bucket_list/transformer.js" />
         <option value="$PROJECT_DIR$/../bucketlist/components/bucket_list/service.js" />
         <option value="$PROJECT_DIR$/../bucketlist/components/bucket_list/controller.js" />
         <option value="$PROJECT_DIR$/../bucketlist/components/bucket_list/model.js" />
+        <option value="$PROJECT_DIR$/../bucketlist/v1/components/index.js" />
+        <option value="$PROJECT_DIR$/../bucketlist/index.js" />
+        <option value="$PROJECT_DIR$/../bucketlist/components/v1/index.js" />
+        <option value="$PROJECT_DIR$/../bucketlist/components/index.js" />
+        <option value="$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/transformer.js" />
+        <option value="$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/index.js" />
+        <option value="$PROJECT_DIR$/../bucketlist/components/v1/items/model.js" />
+        <option value="$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/service.js" />
+        <option value="$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/controller.js" />
+        <option value="$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/model.js" />
       </list>
     </option>
   </component>
@@ -207,18 +210,6 @@
             <path>
               <item name="bucketlist" type="b2602c69:ProjectViewProjectNode" />
               <item name="bucketlist" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bucketlist" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bucketlist" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="bucket_list" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bucketlist" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bucketlist" type="462c0819:PsiDirectoryNode" />
               <item name="libraries" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -231,7 +222,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/components/auth" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bucketlist/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -246,7 +237,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../bucketlist/components/v1" />
+      <recent name="$PROJECT_DIR$/../bucketlist" />
+      <recent name="$PROJECT_DIR$/../bucketlist/v1" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../bucketlist/components" />
       <recent name="$PROJECT_DIR$/components/auth" />
     </key>
   </component>
@@ -368,7 +365,7 @@
       <updated>1561582190245</updated>
       <workItem from="1561582194299" duration="920000" />
       <workItem from="1561756613411" duration="26441000" />
-      <workItem from="1561994775534" duration="62246000" />
+      <workItem from="1561994775534" duration="70230000" />
     </task>
     <servers />
   </component>
@@ -405,13 +402,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89607000" />
+    <option name="totallyTimeSpent" value="97591000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -425,7 +421,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.068627454" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.042016808" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -481,13 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../bucketlist/node_modules/superagent/lib/node/parsers/json.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -495,7 +484,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/auth/validator.js">
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/auth/validator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
@@ -525,52 +514,31 @@
     <entry file="file://$PROJECT_DIR$/../bucketlist/components/items/controller.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/items/validator.js">
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/items/validator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/items/model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="112" column="36" lean-forward="true" selection-start-line="110" selection-start-column="16" selection-end-line="112" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/auth_middleware.js">
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/auth_middleware.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/auth/controller.js">
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/auth/controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="604">
           <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/auth/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/auth/model.js">
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/auth/model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/libraries/errors.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -588,6 +556,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/auth/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/../bucketlist/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -595,52 +573,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/bucket_list/index.js">
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/auth/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="61" column="7" lean-forward="true" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+        <state relative-caret-position="604">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/auth/service.js">
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+        <state relative-caret-position="183">
+          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/bucket_list/validator.js">
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
+        <state relative-caret-position="105">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/validator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="961">
           <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/bucket_list/transformer.js">
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        <state relative-caret-position="220">
+          <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/bucket_list/service.js">
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/transformer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+        <state relative-caret-position="714">
+          <caret line="33" column="82" selection-start-line="33" selection-start-column="82" selection-end-line="33" selection-end-column="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/bucket_list/controller.js">
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/items/model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2671">
-          <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+        <state relative-caret-position="207">
+          <caret line="64" column="6" lean-forward="true" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bucketlist/components/bucket_list/model.js">
+    <entry file="file://$PROJECT_DIR$/../bucketlist/libraries/errors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="207" column="120" selection-start-line="207" selection-start-column="120" selection-end-line="207" selection-end-column="120" />
+        <state relative-caret-position="147">
+          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="87" column="37" lean-forward="true" selection-start-line="87" selection-start-column="37" selection-end-line="87" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="107" column="47" lean-forward="true" selection-start-line="107" selection-start-column="47" selection-end-line="107" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../bucketlist/components/v1/bucket_list/model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
         </state>
       </provider>
     </entry>

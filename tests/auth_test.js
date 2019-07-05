@@ -6,8 +6,8 @@ const expect = require('chai').expect;
 const server = supertest.agent('localhost:3000/auth');
 
 const Errors = require('../libraries/errors');
-const Auth = require('../components/auth/model');
-const AuthService = require('../components/auth/service');
+const Auth = require('../components/v1/auth/model');
+const AuthService = require('../components/v1/auth/service');
 const auth = new AuthService();
 
 describe('Auth API', function() {

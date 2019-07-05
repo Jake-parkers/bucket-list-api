@@ -1,4 +1,4 @@
-const Database = require('../../libraries/database');
+const Database = require('../../../libraries/database');
 const db = new Database();
 const dbDriver = db.connect();
 const uuid = require('uuid/v4');
@@ -11,6 +11,27 @@ class Item {
         this.done = done || false;
         this.date_created = date_created || null;
         this.date_modified = date_modified || null;
+    }
+
+    static exists(user_id, bucket_id, item_name) {
+        const session = dbDriver.session();
+        return new Promise((resolve, reject) => {
+            const readTx = session.readTransaction((tx) => {
+                return tx.run(
+                    "MATCH (user:Person {user_id: $user_id})-[:OWNS]->(bucket:BucketList {bucket_id: $bucket_id})-[:CONTAINS]->(item:Item {name: $item_name}) return item.item_id as item_id", {user_id, bucket_id, item_name}
+                );
+            });
+            readTx.then(result => {
+                session.close();
+                if (result.records.length > 0) {
+                    resolve(result.records[0].get('item_id'));
+                } else resolve(false);
+            }).catch(error => {
+                console.log(error);
+                session.close();
+                reject(new Error('An error occurred while checking bucket'));
+            })
+        })
     }
 
     save(bucket_id) {

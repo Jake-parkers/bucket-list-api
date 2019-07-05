@@ -100,12 +100,21 @@ class BucketListService {
         // payload.id houses the bucket_id
         return new Promise((resolve, reject) => {
             const Item = new ItemModel(payload.name, payload.done);
-            Item.save(payload.id)
+            ItemModel.exists(payload.user_id, payload.id, payload.name)
                 .then(result => {
-                    resolve(result)
+                    if (result === false) { // item with name doesn't exist yet - create item
+                        Item.save(payload.id)
+                            .then(result => {
+                                resolve(result)
+                            }).catch(error => {
+                                reject(error);
+                            });
+                    } else {
+                        resolve(false);
+                    }
                 }).catch(error => {
-                reject(error);
-            });
+                    reject(error);
+                });
         });
     }
 
