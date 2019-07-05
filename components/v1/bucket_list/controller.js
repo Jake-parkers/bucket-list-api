@@ -117,7 +117,7 @@ class BucketListController {
             if (error !== null) resolve(new Response('error', Errors.invalid_params, error, 400));
             else {
                 service.createItem(payload).then(result => {
-                    if (result === false) resolve(new Response('error', Errors.bucket_nonexistent, 'Oops! Bucket the specified bucket doesn\'t exist', 400));
+                    if (result === false) resolve(new Response('error', 'ITEM_NOT_SAVED', 'Oops! Bucket doesn\'t exist or an Item with this name exists already in specified bucket', 400));
                     else resolve(new Response('success', Errors.none, 'Item created successfully', 200));
                 }).catch(error => {
                     reject(new Response('error', Errors.server_error, error.message, 500));
@@ -149,7 +149,7 @@ class BucketListController {
             else {
                 service.fetchItem(payload)
                     .then(item => {
-                        if (item === false) resolve(new Response('error', Errors.no_items, 'No item found in this bucket', 400));
+                        if (item === false) resolve(new Response('error', Errors.item_nonexistent, 'item not found in this bucket', 400));
                         else resolve(new Response('success', Errors.none, item , 200));
                     }).catch(error => {
                     reject(new Response('error', Errors.server_error, error.message, 500));

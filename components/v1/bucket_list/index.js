@@ -99,6 +99,9 @@ router.delete('/:id', requireTokenAuth, appendParamToRequestBody, (req, res) => 
     });
 });
 
+/**
+ * Route for creating a new item in a bucket List
+ */
 router.post('/:id/items', requireTokenAuth, appendParamToRequestBody, (req, res) => {
     controller.createItem(req.body)
         .then(response => {

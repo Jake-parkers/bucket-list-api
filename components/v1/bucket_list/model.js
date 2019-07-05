@@ -166,7 +166,7 @@ class BucketList {
         return new Promise((resolve, reject) =>  {
             const readTx = session.readTransaction((tx) => {
                 return tx.run(
-                    "MATCH (bucket:BucketList {bucket_id: $bucket_id}) set bucket.name = $bucket_name, bucket.date_modified = $date_modified", {bucket_id: this.bucket_id, bucket_name: this.name, $date_modified: this.date_modified}
+                    "MATCH (bucket:BucketList {bucket_id: $bucket_id}) set bucket.name = $bucket_name, bucket.date_modified = $date_modified", {bucket_id: this.bucket_id, bucket_name: this.name, date_modified: this.date_modified}
                 );
             });
             readTx.then(result => {
