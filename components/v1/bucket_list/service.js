@@ -155,21 +155,30 @@ class BucketListService {
         console.log(payload);
         return new Promise((resolve, reject) => {
             const Item = new ItemModel(payload.name,payload.done,payload.item_id);
-            ItemModel.exists(payload.user_id, payload.id, payload.name)
-                .then(result => {
-                    if (result === false) {
-                        Item.update(payload.user_id, payload.id)
-                            .then(result => {
-                                resolve(result)
-                            }).catch(error => {
+            if (payload.done === true) {
+                Item.update(payload.user_id, payload.id)
+                    .then(result => {
+                        resolve(result)
+                    }).catch(error => {
+                    reject(error);
+                });
+            } else {
+                ItemModel.exists(payload.user_id, payload.id, payload.name)
+                    .then(result => {
+                        if (result === false) {
+                            Item.update(payload.user_id, payload.id)
+                                .then(result => {
+                                    resolve(result)
+                                }).catch(error => {
                                 reject(error);
                             });
-                    } else {
-                        resolve(false)
-                    }
-                }).catch(error => {
+                        } else {
+                            resolve(false)
+                        }
+                    }).catch(error => {
                     reject(error);
                 })
+            }
         })
     }
 
