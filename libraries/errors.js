@@ -8,6 +8,7 @@ module.exports = {
     no_items: 'NO_ITEMS_YET',
     item_nonexistent: 'ITEM_DOESNT_EXIST',
     bucket_nonexistent: 'BUCKET_DOESNT_EXIST',
+    bucket_updateFailed: 'UPDATE_FAILED',
     auth_header_missing: 'MISSING_AUTHORIZATION_HEADER',
     invalid_token: 'INVALID_TOKEN_TYPE',
     none: 'N/A'

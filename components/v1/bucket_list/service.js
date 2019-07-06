@@ -11,7 +11,7 @@ class BucketListService {
                     if (result === false) { // bucket with this.name doesn't exist yet - create bucket
                         Bucket.save()
                             .then(result => {
-                                resolve(result)
+                                resolve(Bucket)
                             }).catch(error => {
                                 reject(error);
                             });
@@ -29,8 +29,9 @@ class BucketListService {
             const Bucket = new BucketListModel('', payload.user_id);
             if (payload.q !== undefined) { // fetch bucket by it's name
                 BucketListService.findBucket(payload)
-                    .then(result => {
-                        resolve(result)
+                    .then(bucket => {
+                        if (bucket.length > 1 ) resolve({total: bucket.length, buckets: bucket});
+                        else resolve(bucket)
                     }).catch(error => {
                     reject(error);
                 })
@@ -62,9 +63,18 @@ class BucketListService {
     updateBucket(payload) {
         return new Promise((resolve, reject) => {
             const Bucket = new BucketListModel(payload.name, payload.user_id, payload.id);
-            Bucket.update()
+            BucketListModel.bucketExists(payload.user_id, payload.name)
                 .then(result => {
-                    resolve(result)
+                    if (result === false) { // bucket with this.name doesn't exist yet - create bucket
+                        Bucket.update()
+                            .then(result => {
+                                resolve(result)
+                            }).catch(error => {
+                            reject(error);
+                        });
+                    } else {
+                        resolve(false);
+                    }
                 }).catch(error => {
                 reject(error);
             });
@@ -105,7 +115,7 @@ class BucketListService {
                     if (result === false) { // item with name doesn't exist yet - create item
                         Item.save(payload.id)
                             .then(result => {
-                                resolve(result)
+                                resolve(Item)
                             }).catch(error => {
                                 reject(error);
                             });
@@ -142,14 +152,24 @@ class BucketListService {
     }
 
     updateItem(payload) {
+        console.log(payload);
         return new Promise((resolve, reject) => {
             const Item = new ItemModel(payload.name,payload.done,payload.item_id);
-            Item.update(payload.user_id, payload.id)
+            ItemModel.exists(payload.user_id, payload.id, payload.name)
                 .then(result => {
-                    resolve(result)
+                    if (result === false) {
+                        Item.update(payload.user_id, payload.id)
+                            .then(result => {
+                                resolve(result)
+                            }).catch(error => {
+                                reject(error);
+                            });
+                    } else {
+                        resolve(false)
+                    }
                 }).catch(error => {
-                reject(error);
-            });
+                    reject(error);
+                })
         })
     }
 
