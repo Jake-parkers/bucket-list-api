@@ -29,8 +29,9 @@ class BucketListService {
             const Bucket = new BucketListModel('', payload.user_id);
             if (payload.q !== undefined) { // fetch bucket by it's name
                 BucketListService.findBucket(payload)
-                    .then(result => {
-                        resolve(result)
+                    .then(bucket => {
+                        if (bucket[0].items.indexOf(null) !== -1) bucket[0].items = null;
+                        resolve(bucket)
                     }).catch(error => {
                     reject(error);
                 })
