@@ -17,11 +17,11 @@ app.use(bodyParser.json());
 app.use(morgan('combined'));
 
 app.use(cors({
-    origin: process.env.NODE_ENV === 'development' ? 'http://localhost:4200' : 'http://coming-soon'
+    origin: process.env.NODE_ENV === 'development' ? process.env.FRONTEND_LOCAL_URL : FRONTEND_PRODUCTION_URL
 }));
 
 app.get('/', (req, res) => {
-    res.status(200).send("Expenses Project");
+    res.status(200).send("Bucketlist Project");
 });
 
 // routes
