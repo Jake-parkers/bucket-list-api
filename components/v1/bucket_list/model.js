@@ -200,11 +200,13 @@ class BucketList {
     }
 
     search() {
+        console.log(this.user_id);
+        console.log(this.name);
         const session = dbDriver.session();
         return new Promise((resolve, reject) =>  {
             const readTx = session.readTransaction((tx) => {
                 return tx.run(
-                    "MATCH (user:Person {user_id: $user_id})-[:OWNS]->(bucket:BucketList {name: $bucket_name}) OPTIONAL MATCH (bucket)-[:CONTAINS]->(item:Item) return bucket.bucket_id as id, bucket.name as name, bucket.date_created as date_created, bucket.items as items, bucket.date_modified as date_modified, user.user_id as created_by, item.item_id as item_id, item.name as item_name, item.done as item_done, item.date_created as item_date_created, item.date_modified as item_date_modified", {bucket_name: this.name, user_id: this.user_id}
+                    "MATCH (user:Person {user_id: $user_id})-[:OWNS]->(bucket:BucketList) WHERE bucket.name CONTAINS $bucket_name OPTIONAL MATCH (bucket)-[:CONTAINS]->(item:Item) return bucket.bucket_id as id, bucket.name as name, bucket.date_created as date_created, bucket.items as items, bucket.date_modified as date_modified, user.user_id as created_by, item.item_id as item_id, item.name as item_name, item.done as item_done, item.date_created as item_date_created, item.date_modified as item_date_modified", {bucket_name: this.name, user_id: this.user_id}
                 );
             });
             readTx.then(result => {

@@ -17,7 +17,7 @@ class BucketListController {
             else {
                 service.createBucket(payload).then(result => {
                     if (result === false) resolve(new Response('error', Errors.bucket_exists, 'A bucket with this name exists', 400));
-                    else resolve(new Response('success', Errors.none, 'Bucket created successfully', 200));
+                    else resolve(new Response('success', Errors.none, result, 200));
                 }).catch(error => {
                     reject(new Response('error', Errors.server_error, error.message, 500));
                 })
@@ -38,7 +38,7 @@ class BucketListController {
 
                 service.fetchUserBuckets(obj)
                     .then(result => {
-                        if (result === false) resolve(new Response('error', Errors.no_buckets, 'User has no saved bucket(s) yet', 400));
+                        if (result === false) resolve(new Response('error', Errors.no_buckets, 'No bucket(s) found', 400));
                         else {
                             if (result.buckets === undefined) { // a single bucket was returned with no items
                                 if (result[0].items.indexOf(null) !== -1) result[0].items = null;
@@ -91,7 +91,7 @@ class BucketListController {
             else {
                 service.updateBucket(payload)
                     .then(result => {
-                        if (result === false) resolve(new Response('error', Errors.bucket_nonexistent, 'The specified bucket doesn\'t exist.', 400));
+                        if (result === false) resolve(new Response('error', Errors.bucket_nonexistent, 'Could not update bucket.', 400));
                         else resolve(new Response('success', Errors.none, 'BucketList updated successfully' , 200));
                     }).catch(error => {
                     reject(new Response('error', Errors.server_error, error.message, 500));
@@ -123,7 +123,7 @@ class BucketListController {
             else {
                 service.createItem(payload).then(result => {
                     if (result === false) resolve(new Response('error', 'ITEM_NOT_SAVED', 'Oops! Bucket doesn\'t exist or an Item with this name exists already in specified bucket', 400));
-                    else resolve(new Response('success', Errors.none, 'Item created successfully', 200));
+                    else resolve(new Response('success', Errors.none, result, 200));
                 }).catch(error => {
                     reject(new Response('error', Errors.server_error, error.message, 500));
                 })
