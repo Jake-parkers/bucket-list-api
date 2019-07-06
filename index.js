@@ -1,6 +1,6 @@
 require('dotenv').config();
 const app = require('./components');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 
 // process.on('uncaughtException', function (err) {
 //     logger.info((new Date).toUTCString() + ' uncaughtException:', err.message);
