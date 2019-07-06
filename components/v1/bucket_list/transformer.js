@@ -42,7 +42,7 @@ class Transformer {
             first_page_url: baseUrl + '/bucketlists?page=1',
             last_page,
             last_page_url: baseUrl + '/bucketlists?page=' + last_page,
-            next_page_url: limit === total || limit + bucketlist.length === total ? null : baseUrl + '/bucketlists?page=' + next_page,
+            next_page_url: limit <= total || limit + bucketlist.length <= total ? null : baseUrl + '/bucketlists?page=' + next_page,
             path: baseUrl + '/bucketlists',
             per_page: bucketlist.length,
             prev_page_url: Number(page) === 1 ? null : baseUrl + '/bucketlists?page=' + prev_page,
