@@ -39,7 +39,12 @@ class BucketListController {
                 service.fetchUserBuckets(obj)
                     .then(result => {
                         if (result === false) resolve(new Response('error', Errors.no_buckets, 'User has no saved bucket(s) yet', 400));
-                        else resolve(new Response('success', Errors.none, result.buckets === undefined ? result[0] : Transformer.transformBucketListPaginationResponse(result.buckets, obj.limit, obj.page, result.total) , 200));
+                        else {
+                            if (result.buckets === undefined) { // a single bucket was returned with no items
+                                if (result[0].items.indexOf(null) !== -1) result[0].items = null;
+                            }
+                            resolve(new Response('success', Errors.none, result.buckets === undefined ? result[0] : Transformer.transformBucketListPaginationResponse(result.buckets, obj.limit, obj.page, result.total) , 200));
+                        }
                     }).catch(error => {
                         reject(new Response('error', Errors.server_error, error.message, 500));
                     });

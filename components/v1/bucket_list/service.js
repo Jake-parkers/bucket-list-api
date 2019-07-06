@@ -30,7 +30,6 @@ class BucketListService {
             if (payload.q !== undefined) { // fetch bucket by it's name
                 BucketListService.findBucket(payload)
                     .then(bucket => {
-                        if (bucket[0].items.indexOf(null) !== -1) bucket[0].items = null;
                         resolve(bucket)
                     }).catch(error => {
                     reject(error);
