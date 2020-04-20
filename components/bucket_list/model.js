@@ -132,12 +132,11 @@ class BucketList {
         return new Promise((resolve, reject) =>  {
             const readTx = session.readTransaction((tx) => {
                 return tx.run(
-                    "MATCH (user:Person {user_id: $user_id})-[:OWNS]->(bucket:BucketList {bucket_id: $bucket_id}) MATCH (bucket)-[:CONTAINS]->(item:Item) return bucket.bucket_id as id, bucket.name as name, bucket.date_created as date_created, bucket.items as items, bucket.date_modified as date_modified, user.user_id as created_by, item.item_id as item_id, item.name as item_name, item.done as item_done, item.date_created as item_date_created, item.date_modified as item_date_modified", {bucket_id: this.bucket_id, user_id: this.user_id}
+                    "MATCH (user:Person {user_id: $user_id})-[:OWNS]->(bucket:BucketList {bucket_id: $bucket_id}) OPTIONAL MATCH (bucket)-[:CONTAINS]->(item:Item) return bucket.bucket_id as id, bucket.name as name, bucket.date_created as date_created, bucket.items as items, bucket.date_modified as date_modified, user.user_id as created_by, item.item_id as item_id, item.name as item_name, item.done as item_done, item.date_created as item_date_created, item.date_modified as item_date_modified", {bucket_id: this.bucket_id, user_id: this.user_id}
                 );
             });
             readTx.then(result => {
                 session.close();
-                console.log(result.records.length);
                 if(result.records.length > 0) {
                     let bucketList = result.records.map(record => {
                         return {
@@ -196,6 +195,38 @@ class BucketList {
             }).catch(_ => {
                 session.close();
                 reject(new Error('An error occurred while deleting bucket'));
+            })
+        });
+    }
+
+    search() {
+        const session = dbDriver.session();
+        return new Promise((resolve, reject) =>  {
+            const readTx = session.readTransaction((tx) => {
+                return tx.run(
+                    "MATCH (user:Person {user_id: $user_id})-[:OWNS]->(bucket:BucketList {name: $bucket_name}) OPTIONAL MATCH (bucket)-[:CONTAINS]->(item:Item) return bucket.bucket_id as id, bucket.name as name, bucket.date_created as date_created, bucket.items as items, bucket.date_modified as date_modified, user.user_id as created_by, item.item_id as item_id, item.name as item_name, item.done as item_done, item.date_created as item_date_created, item.date_modified as item_date_modified", {bucket_name: this.name, user_id: this.user_id}
+                );
+            });
+            readTx.then(result => {
+                session.close();
+                if(result.records.length > 0) {
+                    let bucketList = result.records.map(record => {
+                        return {
+                            id: record.get('id'),
+                            name: record.get('name'),
+                            items: record.get('item_id') !== null ? new Item(record.get('item_name'), record.get('item_done'), record.get('item_id'), record.get('date_created'), record.get('date_modified')) : null,
+                            date_created: record.get('date_created'),
+                            date_modified: record.get('date_modified'),
+                            created_by: record.get('created_by')
+                        };
+                    });
+                    resolve(Transformer.transformBucketList(bucketList));
+                } else {
+                    resolve(false);
+                }
+            }).catch(_ => {
+                session.close();
+                reject(new Error('An error occurred while fetching bucket'));
             })
         });
     }
