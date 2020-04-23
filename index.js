@@ -1,6 +1,6 @@
 require('dotenv').config();
 const app = require('./components');
-const port = process.env.PORT || 7000;
+const port = process.env.PORT || 6000;
 
 
 
